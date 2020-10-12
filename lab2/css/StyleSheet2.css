@@ -11,7 +11,6 @@ body {
 }
 p {font-size: 17px;}
 h3 {font-size: 25px;}
-/*333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 #container {
     display: grid;
     grid-template-columns: 35.4% 22.33% 22.27% 20%;
@@ -22,7 +21,6 @@ h3 {font-size: 25px;}
         "cell1 cell2 cell4 cell5" 
         "footer footer footer footer";
 }
-/*333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 header, footer {
     width: 100%;
     height: 130px;
@@ -50,7 +48,6 @@ header h3 {
     font-family: "desdemona";
     font-size: 22px;
 }
-/*3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 #cell-1 {
     height: 602px;
     background-color: cadetblue;
@@ -67,7 +64,6 @@ header h3 {
 }
 #cell-1 img { width: 400px;}
 #cell-1 p { padding-top: 40px;}
-/*3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 #cell-2 {
     background-color: lightsteelblue;
     padding: 20px 10px 0px 10px;
@@ -80,7 +76,6 @@ header h3 {
     margin-bottom: 30px;
     margin-top: 0px;
 }
-/*3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 #cell-3 {
     height: 54px;
     background-color: cadetblue;
@@ -89,7 +84,6 @@ header h3 {
     border-right: 0px;
     grid-area: cell3;
 }
-/*333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 #cell-4 {
     height: 508px;
     background-color: lightsteelblue;
@@ -103,7 +97,6 @@ header h3 {
     margin-bottom: 30px;
     margin-top: 0px;
 }
-/*333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 #cell-5 {
     height: 507px;
     background-color: lightsteelblue;
@@ -115,7 +108,6 @@ header h3 {
     margin-bottom: 30px;
     margin-top: 0px;
 }
-/*33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 ul { padding-left: 7px;}
 ol {
     color: darkblue;
@@ -128,7 +120,6 @@ ol li p{
     font-weight: normal;
     font-size: 17px;
 }
-/*3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 nav a:link, nav a:visited {
     color: white;
     font-size: 22px;
@@ -137,7 +128,6 @@ nav a:link, nav a:visited {
 nav a:hover {color: black;}
 nav a { margin-right: 30px;}
 nav {padding-top: 17px;}
-/*3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 footer {
     border-bottom: 0px;
     border-left: 0px;
