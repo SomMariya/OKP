@@ -145,7 +145,7 @@ footer {
     border-bottom: 0px;
     border-left: 0px;
     position: relative;
-    overflow: hidden;
+    clear: both;
 }
 footer h1 {
     position: absolute;
