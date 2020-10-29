@@ -19,19 +19,19 @@ document.querySelector('#form-min-digit').onsubmit = function (event)
     document.querySelector('#form-min-digit').reset();
     alert("Min digit = " + mindigit);
 }
-//window.addEventListener('load', function ()
-//{
-//    if (getCookie('min-digit')) {
-//        document.querySelector('#form-min-digit').style = "display:none;";
-//        setTimeout(() => {
-//            if (confirm(getCookie('min-digit') + "\nAfter you click \"OK\" cookies will be deleted !")) {
-//                document.cookie = 'min-digit=' + getCookie('min-digit') + '; max-age=0';
-//                alert('Cookies were removed !');
-//                location.reload()
-//            }
-//        }, 100);
-//    }
-//})
+window.addEventListener('load', function ()
+{
+    if (getCookie('min-digit')) {
+        document.querySelector('#form-min-digit').style = "display:none;";
+        setTimeout(() => {
+            if (confirm(getCookie('min-digit') + "\nAfter you click \"OK\" cookies will be deleted !")) {
+                document.cookie = 'min-digit=' + getCookie('min-digit') + '; max-age=0';
+                alert('Cookies were removed !');
+                location.reload()
+            }
+        }, 100);
+    }
+})
 
 //document.querySelector('header').onclick = function () {
 //    let radius = Number(prompt("Enter radius:"));
