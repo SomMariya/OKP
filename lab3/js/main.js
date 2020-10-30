@@ -4,7 +4,7 @@ button.onclick = function ()
     swapBlock('header h3', '#cell-5')
 };
 // 2 task
-document.querySelector('#cell-4 h3').onclick = function ()
+document.querySelector('#cell-1 img').onclick = function ()
 {
     const radius = 100;
     document.querySelector('#last').textContent += ' S of circle  = ' + areaOfCircle(radius);
