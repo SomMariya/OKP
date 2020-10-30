@@ -33,12 +33,12 @@ window.addEventListener('load', function ()
     }
 })
 // 4 task
-loadBorderColor('text-color');
-document.querySelector('#form-text-color').onsubmit = function (event) {
+loadTextColor('text-color');
+document.getElementById('form-text-color').onsubmit = function (event) {
     event.preventDefault();
     let textColor = document.querySelector('#form-text-color > input[name="text-color"]').value;
     localStorage.setItem('text-color', textColor);
-    loadBorderColor('text-color');
+    loadTextColor('text-color');
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 1 task
@@ -64,18 +64,18 @@ function getCookie(name) {
     return null;
 }
 // 4 task
-function changeBorderColor(color)
+function changeTextColor(color)
 {
     var color1 = color; // cached
-    document.querySelector("#cell-5").style.color = (color1);
+    document.getElementById("cell-5").style.color = (color1);
     //document.querySelector('#cell-5').style.color = color;
     
 }
-function loadBorderColor(localStorageKey)
+function loadTextColor(localStorageKey)
 {
     if (localStorage.getItem(localStorageKey))
     {
-        changeBorderColor(localStorage.getItem(localStorageKey));
+        changeTextColor(localStorage.getItem(localStorageKey));
         document.querySelector('#form-text-color > input[name="text-color"]').value = localStorage.getItem(localStorageKey);
     }
 }
