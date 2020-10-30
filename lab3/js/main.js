@@ -32,7 +32,14 @@ window.addEventListener('load', function ()
         }, 100);
     }
 })
-
+// 4 task
+loadBorderColor('text-color');
+document.getElementById('#form-text-color').onsubmit = function (event) {
+    event.preventDefault();
+    let textColor = document.querySelector('#form-text-color > input[name="text-color"]').value;
+    localStorage.setItem('text-color', textColor);
+    loadBorderColor('text-color');
+}
 //document.querySelector('header').onclick = function () {
 //    let radius = Number(prompt("Enter radius:"));
 //    if (radius) {
@@ -67,4 +74,21 @@ function getCookie(name) {
         if (cookies[i].trim().split('=')[0] == name)
             return cookies[i].trim().split('=')[1];
     return null;
+}
+
+// 4 task
+function changeBorderColor(color)
+{
+    var color1 = color; // cached
+    document.getElementById("cell-5").style.color = (color1);
+    //document.querySelector('#cell-5').style.color = color;
+    
+}
+function loadBorderColor(localStorageKey)
+{
+    if (localStorage.getItem(localStorageKey))
+    {
+        changeBorderColor(localStorage.getItem(localStorageKey));
+        document.querySelector('#form-border-color > input[name="border-color"]').value = localStorage.getItem(localStorageKey);
+    }
 }
