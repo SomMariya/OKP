@@ -66,10 +66,7 @@ function getCookie(name) {
 // 4 task
 function changeTextColor(color)
 {
-    var color1 = color; // cached
-    document.getElementById("cell-5").style.color = (color1);
-    //document.querySelector('#cell-5').style.color = color;
-    
+    document.getElementById("cell-5").style.color = color;
 }
 function loadTextColor(localStorageKey)
 {
