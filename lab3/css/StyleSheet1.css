@@ -13,7 +13,7 @@ body {
 p {font-size: 17px;}
 h3 {font-size: 25px;}
 
-#form-min-digit, #form-text-color {
+#form-min-digit, #form-text-color, #cell-2 > p {
     font-weight: bold;
 }
 #form-min-digit button, #form-text-color button{
@@ -65,7 +65,7 @@ main {
 }
 #cell-1 h3 {
     padding-bottom: 30px;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 #cell-1 img {
     width: 400px;
@@ -134,7 +134,10 @@ section {
 #cell-5 p{
     margin-bottom: 20px;
 }
-ul { padding-left: 7px;}
+ul {
+    padding-left: 7px;
+    padding-top: 20px;
+}
 ol {
     color: darkblue;
     font-weight: bold;
