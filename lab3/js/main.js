@@ -34,7 +34,7 @@ window.addEventListener('load', function ()
 })
 // 4 task
 loadBorderColor('text-color');
-document.getElementById('#form-text-color').onsubmit = function (event) {
+document.getElementById('form-text-color').onsubmit = function (event) {
     event.preventDefault();
     let textColor = document.querySelector('#form-text-color > input[name="text-color"]').value;
     localStorage.setItem('text-color', textColor);
