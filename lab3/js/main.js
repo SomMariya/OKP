@@ -40,6 +40,11 @@ document.getElementById('form-text-color').onsubmit = function (event) {
     localStorage.setItem('text-color', textColor);
     loadTextColor('text-color');
 }
+// 5 task
+document.getElementById('select').onselect = function ()
+{
+    alert("You selected some text!");
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 1 task
 function swapBlock(header, cell5) {
