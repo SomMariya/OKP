@@ -24,9 +24,9 @@ window.addEventListener('load', function ()
     if (getCookie('min-digit')) {
         document.querySelector('#form-min-digit').style = "display:none;";
         setTimeout(() => {
-            if (confirm(getCookie('min-digit') + "\nAfter you click \"OK\" cookies will be deleted !")) {
+            if (confirm(getCookie('min-digit') + "\nAfter clicking \"OK\" cookies will be deleted")) {
                 document.cookie = 'min-digit=' + getCookie('min-digit') + '; max-age=0';
-                alert('Cookies were removed !');
+                alert('Cookies were removed');
                 location.reload()
             }
         }, 100);
@@ -34,25 +34,13 @@ window.addEventListener('load', function ()
 })
 // 4 task
 loadBorderColor('text-color');
-document.querySelector('#form-text-color').onsubmit = function (event) {
+document.getElementById('form-text-color').onsubmit = function (event) {
     event.preventDefault();
     let textColor = document.querySelector('#form-text-color > input[name="text-color"]').value;
     localStorage.setItem('text-color', textColor);
     loadBorderColor('text-color');
 }
-//document.querySelector('header').onclick = function () {
-//    let radius = Number(prompt("Enter radius:"));
-//    if (radius) {
-//        if (radius > 0)
-//            document.querySelector('#last').textContent += ' S of circle  = ' + areaOfCircle(radius);
-//        else
-//            alert('Wrong value')
-//    }
-//    else {
-//        alert('Wrong value')
-//    }
-//};
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 1 task
 function swapBlock(header, cell5) {
     let temp = document.querySelector(header).innerHTML;
@@ -75,12 +63,11 @@ function getCookie(name) {
             return cookies[i].trim().split('=')[1];
     return null;
 }
-
 // 4 task
 function changeBorderColor(color)
 {
     var color1 = color; // cached
-    document.querySelector("#cell-5").style.color = (color1);
+    document.getElementById("cell-5").style.color = (color1);
     //document.querySelector('#cell-5').style.color = color;
     
 }
