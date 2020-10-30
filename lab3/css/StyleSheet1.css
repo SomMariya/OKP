@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,13 +13,14 @@ body {
 p {font-size: 17px;}
 h3 {font-size: 25px;}
 
-#form-min-digit {
-    font-weight:bold;
+#form-min-digit, #form-text-color {
+    font-weight: bold;
 }
-#form-min-digit button{
+#form-min-digit button, #form-text-color button{
     color: cadetblue;
     font-size: 15px;
 }
+
 header, footer {
     width: 100%;
     height: 130px;
