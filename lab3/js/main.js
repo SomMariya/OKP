@@ -82,10 +82,8 @@ function loadTextColor(localStorageKey)
     }
 }
 
-
-
-
 makeEditableBlock('cell-2');
+alert('content');
 const makeEditableBlock = (blockId) => {
     const content = localStorage.getItem(`${blockId}-c`) ?
         localStorage.getItem(`${blockId}-c`) :
