@@ -85,7 +85,7 @@ function loadTextColor(localStorageKey)
 
 
 
-makeEditableBlock('cell-2-c');
+makeEditableBlock('cell-2');
 const makeEditableBlock = (blockId) => {
     const content = localStorage.getItem(`${blockId}-c`) ?
         localStorage.getItem(`${blockId}-c`) :
