@@ -81,3 +81,17 @@ function loadTextColor(localStorageKey)
         document.querySelector('#form-text-color > input[name="text-color"]').value = localStorage.getItem(localStorageKey);
     }
 }
+
+
+
+
+makeEditableBlock('cell-2-c');
+const makeEditableBlock = (blockId) => {
+    const content = localStorage.getItem(`${blockId}-c`) ?
+        localStorage.getItem(`${blockId}-c`) :
+        document.getElementById(blockId).innerHTML;
+    document.getElementById(blockId).innerHTML = content;
+    document.getElementById(blockId).insertAdjacentHTML('beforeend',
+        `<textarea class="editArea">${content}</textarea>
+	<button type="submit" class="editBtn">Return default</button>`)
+}
