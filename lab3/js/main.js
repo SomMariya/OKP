@@ -45,6 +45,14 @@ document.getElementById('select').onselect = function ()
     alert("You selected some text!");
 }
 //6 task
+document.addEventListener('DOMContentLoaded', () => {
+    makeEditableBlock('cell-1-c');
+    makeEditableBlock('cell-2-c');
+    makeEditableBlock('cell-3-c');
+    makeEditableBlock('cell-4-c');
+    makeEditableBlock('cell-5-c');
+    initEditableBlocks();
+})
 //REALIZATION
 //1 task
 function swapBlock(header, cell5) {
@@ -82,58 +90,38 @@ function loadTextColor(localStorageKey)
     }
 }
 //6 task
-function EditBlock(id) {
-
-    let textarea = document.createElement('textarea');
-    textarea.value = document.getElementById(id).innerHTML;
-    document.getElementById(id).append(textarea);
-    let submit = document.createElement('button');
-    submit.innerHTML = "Submit";
-    submit.onclick = Save;
-    document.getElementById(id).append(submit);
-    document.getElementById(id).oncontextmenu = "";
+const initEditableBlocks = () => {
+    Array.from(document.getElementsByClassName('editArea')).map((area) => {
+        area.addEventListener('change', (event) => {
+            const newContent = event.target.value;
+            if (isValidHTML(newContent)) {
+                localStorage.setItem(`${event.target.parentNode.id}-c`, newContent);
+                event.target.parentNode.children[0].innerHTML = newContent;
+            }
+            else {
+                localStorage.removeItem(`${event.target.parentNode.id}-c`);
+                document.location.reload();
+            }
+        })
+    })
+    Array.from(document.getElementsByClassName('editBtn')).map((btn) => {
+        btn.addEventListener('click', (event) => {
+            localStorage.removeItem(`${event.target.parentNode.id}-c`);
+            document.location.reload();
+        })
+    })
 }
-
-function Save() {
-    let parent = this.parentNode;
-    let textarea = parent.querySelector('textarea');
-    let val = textarea.value;
-    localStorage.setItem(parent.id, textarea.value);
-    if (IsValidHTML(val))
-        parent.innerHTML = val;
-    else
-        parent.textContent = val;
-    location.reload();
+const makeEditableBlock = (blockId) => {
+    const content = localStorage.getItem(`${blockId}-c`) ?
+        localStorage.getItem(`${blockId}-c`) :
+        document.getElementById(blockId).innerHTML;
+    document.getElementById(blockId).innerHTML = content;
+    document.getElementById(blockId).insertAdjacentHTML('beforeend',
+        `<textarea class="editArea">${content}</textarea>
+  <button type="submit" class="editBtn">Return</button>`)
 }
-
-function IsValidHTML(html) {
+const isValidHTML = (html) => {
     const doc = document.createElement('div');
     doc.innerHTML = html;
     return doc.innerHTML === html;
-}
-
-var blocks = ["block1", "menu-name", "menu-content", "content", "reliable", "purposes"];
-
-function GetBlocksLocalData() {
-    for (var i = 0; i < blocks.length; i++) {
-        let data = localStorage.getItem(blocks[i]);
-        if (data) {
-            let block = document.getElementById(blocks[i]);
-            block.innerHTML = data;
-            if (block.getElementsByClassName('delete').length == 0) {
-                let delLoc = document.createElement('button');
-                delLoc.classList.add("delete");
-                delLoc.innerHTML = "DELETE LOCALSTORAGE";
-                delLoc.onclick = DeleteLocalStorageInfo;
-                document.getElementById(blocks[i]).append(delLoc);
-            }
-        }
-    }
-}
-
-function DeleteLocalStorageInfo() {
-    let parent = this.parentNode;
-    let id = parent.id;
-    localStorage.removeItem(id);
-    location.reload();
-}
+};
