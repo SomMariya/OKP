@@ -4,7 +4,7 @@ button.onclick = function ()
     swapBlock('header div', '#cell-5')
 };
 //2 task
-document.querySelector('#cell-1 img').onclick = function ()
+document.querySelector('#cell-4').onclick = function ()
 {
     const radius = 100;
     document.querySelector('#last').textContent += ' S of circle  = ' + areaOfCircle(radius);
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     makeEditableBlock('cell-1-c');
     makeEditableBlock('cell-2-c');
     makeEditableBlock('cell-3-c');
-    makeEditableBlock('cell-4-c');
     makeEditableBlock('cell-5-c');
     initEditableBlocks();
 })
